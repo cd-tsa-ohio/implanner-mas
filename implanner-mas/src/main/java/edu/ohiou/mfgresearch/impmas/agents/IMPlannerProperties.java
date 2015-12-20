@@ -19,7 +19,7 @@ public class IMPlannerProperties {
 	static{
 		 try {
 		      URL resourcePropertyURL = IMPlannerProperties.class.getResource(
-		    		  "agent.properties");
+		    		  "/META-INF/agent.properties");
 		      properties.load(resourcePropertyURL.openStream());
 		      System.out.println(
 		      "Agent properties loaded from IMPlanner resource, " + resourcePropertyURL);
