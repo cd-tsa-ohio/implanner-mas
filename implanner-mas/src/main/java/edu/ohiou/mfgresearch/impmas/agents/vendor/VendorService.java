@@ -2,6 +2,7 @@ package edu.ohiou.mfgresearch.impmas.agents.vendor;
 
 import jade.content.lang.Codec.CodecException;
 import jade.content.onto.OntologyException;
+import jade.content.onto.UngroundedException;
 import jade.content.onto.basic.Action;
 import jade.content.onto.basic.Done;
 import jade.core.AID;
@@ -51,8 +52,13 @@ public class VendorService extends AbstractService {
 				
 			}
 			
-		} catch (CodecException
-				| OntologyException e) {
+		} catch (CodecException e) {
+			// TODO Auto-generated catch block
+			serviceAgent.logger.severe(e.getMessage());
+		} catch (UngroundedException e) {
+			// TODO Auto-generated catch block
+			serviceAgent.logger.severe(e.getMessage());
+		} catch (OntologyException e) {
 			// TODO Auto-generated catch block
 			serviceAgent.logger.severe(e.getMessage());
 		}

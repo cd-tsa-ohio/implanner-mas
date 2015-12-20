@@ -2,6 +2,7 @@ package edu.ohiou.mfgresearch.impmas.agents.implanner;
 
 import jade.content.lang.Codec.CodecException;
 import jade.content.onto.OntologyException;
+import jade.content.onto.UngroundedException;
 import jade.content.onto.basic.Action;
 import jade.core.AID;
 import jade.core.behaviours.FSMBehaviour;
@@ -155,8 +156,13 @@ public class SystemAgent extends MfgAgent {
 						instance.getImplannerFrame().setVisible(false);
 						instanceList.remove(register.getInstanceID());
 					}
-				} catch (CodecException
-						| OntologyException e) {
+				} catch (CodecException e ) {
+					// TODO Auto-generated catch block
+					logger.severe("Following incoming message cannot be understood \n"+message+"\n"+e.getMessage());
+				} catch (UngroundedException e) {
+					// TODO Auto-generated catch block
+					logger.severe("Following incoming message cannot be understood \n"+message+"\n"+e.getMessage());
+				} catch (OntologyException e) {
 					// TODO Auto-generated catch block
 					logger.severe("Following incoming message cannot be understood \n"+message+"\n"+e.getMessage());
 				}
@@ -334,7 +340,6 @@ public class SystemAgent extends MfgAgent {
 		class OpenPrtFileListener implements ActionListener{
 			
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				try {
@@ -407,37 +412,31 @@ public class SystemAgent extends MfgAgent {
 
 		class IMPlannerFrameListener implements InternalFrameListener{
 
-			@Override
 			public void internalFrameOpened(InternalFrameEvent e) {
 				// TODO Auto-generated method stub
 
 			}
 
-			@Override
 			public void internalFrameClosing(InternalFrameEvent e) {
 				// TODO Auto-generated method stub
 
 			}
 
-			@Override
 			public void internalFrameClosed(InternalFrameEvent e) {
 				// TODO Auto-generated method stub
 
 			}
 
-			@Override
 			public void internalFrameIconified(InternalFrameEvent e) {
 				// TODO Auto-generated method stub
 				numActiveFrames--;
 			}
 
-			@Override
 			public void internalFrameDeiconified(InternalFrameEvent e) {
 				// TODO Auto-generated method stub
 				numActiveFrames++;
 			}
 
-			@Override
 			public void internalFrameActivated(InternalFrameEvent e) {
 				// TODO Auto-generated method stub
 				JInternalFrame implannerFrame = e.getInternalFrame();
@@ -450,7 +449,6 @@ public class SystemAgent extends MfgAgent {
 				}
 			}
 
-			@Override
 			public void internalFrameDeactivated(InternalFrameEvent e) {
 				// TODO Auto-generated method stub
 				JInternalFrame implannerFrame = e.getInternalFrame();
@@ -484,7 +482,6 @@ public class SystemAgent extends MfgAgent {
 
 		class OpenStockFileListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -494,7 +491,6 @@ public class SystemAgent extends MfgAgent {
 
 		class ExportXMLListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -504,7 +500,6 @@ public class SystemAgent extends MfgAgent {
 
 		class ExportCSVListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -514,7 +509,6 @@ public class SystemAgent extends MfgAgent {
 
 		class ImportListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -524,7 +518,6 @@ public class SystemAgent extends MfgAgent {
 
 		class OpenPropertyListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				String currentDir = ViewObject.getProperties().getProperty("UG_FILE_FOLDER", "");
@@ -535,7 +528,6 @@ public class SystemAgent extends MfgAgent {
 
 		class ExitListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -551,7 +543,6 @@ public class SystemAgent extends MfgAgent {
 		class OperationSelectionListener implements ActionListener{
 			
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				
 				int operation = 0;
@@ -585,12 +576,14 @@ public class SystemAgent extends MfgAgent {
 
 		class CreateMarketListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				try {
 					createMarket();
-				} catch (UnknownHostException | StaleProxyException e1) {
+				} catch (UnknownHostException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (StaleProxyException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -619,7 +612,6 @@ public class SystemAgent extends MfgAgent {
 
 		class CreateServiceListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				displayServiceManagementDialog();
@@ -649,7 +641,6 @@ public class SystemAgent extends MfgAgent {
 
 		class LoadServiceListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -659,7 +650,6 @@ public class SystemAgent extends MfgAgent {
 
 		class StopServiceListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -670,7 +660,6 @@ public class SystemAgent extends MfgAgent {
 		class DisplayReportListener implements ActionListener{
 
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 
@@ -680,7 +669,6 @@ public class SystemAgent extends MfgAgent {
 
 		class LaunchAgentLogListener implements ActionListener{
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				launchAgent(LogManagerAgent.class, "Agent Log", null, true, null, 0);
 			}
@@ -690,7 +678,6 @@ public class SystemAgent extends MfgAgent {
 		class ShowAboutListener implements ActionListener{
 
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 

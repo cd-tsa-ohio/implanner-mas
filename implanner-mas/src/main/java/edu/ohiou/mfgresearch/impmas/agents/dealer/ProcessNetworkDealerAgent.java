@@ -123,8 +123,10 @@ public class ProcessNetworkDealerAgent extends MfgAgent {
 				manager.fillContent(msg, d);
 				send(msg);
 			}
-		} catch (CodecException
-				| OntologyException e) {
+		} catch (CodecException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (OntologyException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 

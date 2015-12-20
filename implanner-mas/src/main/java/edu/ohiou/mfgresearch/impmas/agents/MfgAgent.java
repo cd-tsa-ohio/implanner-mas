@@ -358,7 +358,10 @@ public abstract class MfgAgent extends Agent {
 				result.setConcept(packets.get(key));
 				try {
 					manager.fillContent(msg, result);
-				} catch (CodecException | OntologyException e) {
+				} catch (CodecException e) {
+					// TODO Auto-generated catch block
+					logger.severe(e.getMessage());
+				} catch (OntologyException e) {
 					// TODO Auto-generated catch block
 					logger.severe(e.getMessage());
 				}
@@ -467,14 +470,17 @@ public abstract class MfgAgent extends Agent {
 	}
 	
 	public void launchAgent(ServiceClass s){
-		try {
-			AbstractService service = (AbstractService) s.getServiceClass().newInstance();
-			launchAgent(ServiceAgent.class, s.toString()+"Service", new AbstractService[]{service}, false, "192.168.2.9", 1099);
-			
-		} catch (InstantiationException | IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			AbstractService service;
+			try {
+				service = (AbstractService) s.getServiceClass().newInstance();
+				launchAgent(ServiceAgent.class, s.toString()+"Service", new AbstractService[]{service}, false, "192.168.2.9", 1099);
+			} catch (InstantiationException e) {
+				// TODO Auto-generated catch block
+				logger.severe(e.getMessage());
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				logger.severe(e.getMessage());
+			}
 	}
 	
 

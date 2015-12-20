@@ -602,9 +602,12 @@ public class IMPlannerAgent extends MfgAgent {
 				Action a = new Action(getAID(), register);
 				manager.fillContent(message, a);
 				send(message);
-			} catch (CodecException | OntologyException e) {
+			} catch (CodecException e) {
 				// TODO Auto-generated catch block
 				logger.severe(e.getMessage());
+			} catch (OntologyException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			if(exitValueStateA==1){
 				myAgent.doDelete();

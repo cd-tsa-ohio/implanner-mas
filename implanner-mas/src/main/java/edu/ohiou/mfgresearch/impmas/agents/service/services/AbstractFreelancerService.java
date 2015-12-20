@@ -71,8 +71,10 @@ public abstract class AbstractFreelancerService extends AbstractService {
 						messages.add(msg);
 					}
 				}
-			} catch (CodecException
-					| OntologyException e) {
+			} catch (CodecException e) {
+				// TODO Auto-generated catch block
+				serviceAgent.logger.severe(e.getMessage());
+			} catch (OntologyException e) {
 				// TODO Auto-generated catch block
 				serviceAgent.logger.severe(e.getMessage());
 			}
