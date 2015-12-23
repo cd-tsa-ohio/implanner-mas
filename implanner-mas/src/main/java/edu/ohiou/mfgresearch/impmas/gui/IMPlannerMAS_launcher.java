@@ -15,21 +15,25 @@ public class IMPlannerMAS_launcher extends IntegrationPanel{
 	private static final long serialVersionUID = 8885474165922762252L;
 
 	private JButton launchAgentButton = null;
+	{
+		removeButtonOptions(ALL);
+	}
 	
 	public IMPlannerMAS_launcher() {
-		super();
+		
+		
 	}
 
-	/**
-	 * Override getButtonToolBar to add IMPLanner MAS specific buttons in the integration panel
-	 */
-	@Override	
-	protected JToolBar getButtonToolBar() {
-		// TODO Auto-generated method stub
-		JToolBar buttonToolBar = super.getButtonToolBar();
-		buttonToolBar.add(getLaunchAgentButton());
-		return buttonToolBar;
-	}
+//	/**
+//	 * Override getButtonToolBar to add IMPLanner MAS specific buttons in the integration panel
+//	 */
+//	@Override	
+//	protected JToolBar getButtonToolBar() {
+//		// TODO Auto-generated method stub
+//		JToolBar buttonToolBar = super.getButtonToolBar();
+//		buttonToolBar.add(getLaunchAgentButton());
+//		return buttonToolBar;
+//	}
 	
 	private JButton getLaunchAgentButton() {
 		if (launchAgentButton == null) {
@@ -42,6 +46,10 @@ public class IMPlannerMAS_launcher extends IntegrationPanel{
 			});
 		}
 		return launchAgentButton;
+	}
+	
+	protected void configureButtons () {
+		super.configureButtons();
 	}
 
 	void launchAgent_actionPerformed(ActionEvent e) {
