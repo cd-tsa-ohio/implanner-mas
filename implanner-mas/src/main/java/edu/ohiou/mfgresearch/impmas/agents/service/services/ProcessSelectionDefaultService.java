@@ -34,8 +34,7 @@ public class ProcessSelectionDefaultService extends AbstractFreelancerService{
 		// TODO Auto-generated constructor stub
 		super(null);
 		setServiceDescription("Process Selection Member Service");
-		ruleFolder = ViewObject.getProperties().getProperty("JESS_RULE_FOLDER", "");
-		dataFile = ViewObject.getProperties().getProperty("JESS_DATA_FILE", "");
+
 	}
 
 	/**
@@ -49,7 +48,8 @@ public class ProcessSelectionDefaultService extends AbstractFreelancerService{
 		// TODO Auto-generated method stub
 		Set<MfgConcept> output = new HashSet<MfgConcept>();
 		FactFile ff = (FactFile) input;
-		
+		ruleFolder = ViewObject.getProperties().getProperty("JESS_RULE_FOLDER", "");
+		dataFile = ViewObject.getProperties().getProperty("JESS_DATA_FILE", "");	
 			try {
 				MfgProcess.mfgProcesses = new LinkedList<MfgProcess>();
 				System.out.println(">> Making new engine...");
