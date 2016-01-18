@@ -105,6 +105,7 @@ protected void configureButtons() {
 	
 	void showPPNButton_actionPerformed(java.awt.event.ActionEvent e) {
 		TestExamples example = new TestExamples();
+		example.setPartName(this.partModel.getPartName());
 		PartActivity pAct = new PartActivity();
 		pAct.setActivityForPart(example);
 		example.addAltPlan(pAct);
