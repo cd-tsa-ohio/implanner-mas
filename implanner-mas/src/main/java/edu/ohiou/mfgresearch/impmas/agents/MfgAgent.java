@@ -197,7 +197,7 @@ public abstract class MfgAgent extends Agent {
 			switch (priority) {
 			//Try to find agent and store message in queue for future use
 			case MUSTSEND:
-				results = MfgDF.searchByService(this, searchPattern, type, searchDepth);
+				results = MfgDF.getInstance().searchByService(this, searchPattern, type, searchDepth);
 				if(results.length>1){
 					int i=1;
 					for(DFAgentDescription df:results){
@@ -234,7 +234,7 @@ public abstract class MfgAgent extends Agent {
 				// Just try to send the message but no need to save message in queue if 
 				//	any agent is not found
 			case TRYTOSEND:
-				results = MfgDF.searchByService(this, searchPattern, type, searchDepth);
+				results = MfgDF.getInstance().searchByService(this, searchPattern, type, searchDepth);
 				if(results.length>1){
 					int i=1;
 					for(DFAgentDescription df:results){

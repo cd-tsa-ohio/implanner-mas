@@ -42,14 +42,15 @@ public class MfgDF implements Serializable{
 	 */
 	private static HashMap<Long, String> register = new HashMap<Long, String>();
 
-	private static final MfgDF instance = null;
+	private static MfgDF instance = null;
 	private static Random rand = null;
 	
 	private static AID systemAgent = null;
 
 	public static MfgDF getInstance(){
 		if(instance == null){
-			return new MfgDF();
+			instance = new MfgDF();
+			return instance;
 		}
 		else
 			return instance;
@@ -101,7 +102,7 @@ public class MfgDF implements Serializable{
 	 * @return
 	 * @throws FIPAException
 	 */
-	public static DFAgentDescription[] searchByService(Agent a, String pattern, String type, int searchDepth) throws FIPAException{
+	public DFAgentDescription[] searchByService(Agent a, String pattern, String type, int searchDepth) throws FIPAException{
 
 		SearchPattern sp = new SearchPattern();
 		TreeMap<Integer, DFAgentDescription> results = new TreeMap<Integer, DFAgentDescription>();

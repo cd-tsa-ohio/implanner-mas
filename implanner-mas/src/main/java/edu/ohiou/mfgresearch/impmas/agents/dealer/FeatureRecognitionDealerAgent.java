@@ -115,7 +115,7 @@ public class FeatureRecognitionDealerAgent extends MfgAgent {
 				ACLMessage msg = createMessage(ACLMessage.REQUEST);
 				
 				//Search all vendors 
-				DFAgentDescription[] vendors = MfgDF.searchByService(this, "Feature Recognition Service", IMPlannerProperties.AgentType.Vendor.toString(), 0);
+				DFAgentDescription[] vendors = MfgDF.getInstance().searchByService(this, "Feature Recognition Service", IMPlannerProperties.AgentType.Vendor.toString(), 0);
 				for(DFAgentDescription ad:vendors){
 					msg.addReceiver(ad.getName());
 				}
