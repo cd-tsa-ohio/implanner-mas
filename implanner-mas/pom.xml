@@ -50,7 +50,7 @@
             </build>
         </profile>
         <profile>
-            <id>jade-agent</id>
+            <id>jade-system-agent</id>
             <build>
                 <plugins>
                     <plugin>
@@ -61,7 +61,7 @@
                             <mainClass>jade.Boot</mainClass>
                             <arguments>
                                 <argument>-conf</argument>
-                                <argument>src/main/resources/META-INF/jade-agent-container.properties</argument>
+                                <argument>src/main/resources/META-INF/jade-agent-system.properties</argument>
                             </arguments>
                         </configuration>
                     </plugin>

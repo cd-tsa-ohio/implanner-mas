@@ -194,10 +194,12 @@ public class FeatureRecognitionDealerAgent extends MfgAgent {
 
 	@Override
 	public ServiceDescription[] getServices() {
-		Markets[] ms = (Markets[]) getArguments();
-		this.m = ms[0];
+//		if (getArguments()[0] instanceof Markets){
+//			Markets[] ms = (Markets[]) getArguments();
+//			this.m = ms[0];
+//		}
 		ServiceDescription[] services = new ServiceDescription[]{new ServiceDescription(){{
-			setName(m.getText());
+			setName((String) getArguments()[0]);
 			setType(AgentType.Market.toString());
 			Integer performative = new Integer(ACLMessage.QUERY_REF);
 			addProperties(new Property(performative.toString(), new HaveVendor()));

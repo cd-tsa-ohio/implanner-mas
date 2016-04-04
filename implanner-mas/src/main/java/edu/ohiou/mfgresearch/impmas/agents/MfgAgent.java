@@ -137,6 +137,8 @@ public abstract class MfgAgent extends Agent {
 			fh.setFormatter(formatter);
 			
 			logger.info("my first log");
+			
+			
 			MfgDF.getInstance().register(this, getServices());
 			
 			
