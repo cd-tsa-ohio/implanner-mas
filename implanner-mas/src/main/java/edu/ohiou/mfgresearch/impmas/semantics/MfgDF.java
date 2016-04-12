@@ -117,16 +117,16 @@ public class MfgDF implements Serializable{
 		dfd.addServices(sd);
 		DFAgentDescription[] res = DFService.search(a, dfd);
 		
-//		for(DFAgentDescription ad:res){
-//			Iterator it = ad.getAllServices();
-//			while(it.hasNext()){
-//				ServiceDescription sds = (ServiceDescription) it.next();
-//				if(sp.match_main(register.get(Long.parseLong(sds.getName())), pattern, 0)!=-1){
-//					//Match found
-//					results.put(LevenshteinDistance.computeLevenshteinDistance(register.get(Long.parseLong(sds.getName())), pattern), ad);
-//				}
-//			}
-//		}
+		for(DFAgentDescription ad:res){
+			Iterator it = ad.getAllServices();
+			while(it.hasNext()){
+				ServiceDescription sds = (ServiceDescription) it.next();
+				if(sp.match_main(sds.getName(), pattern, 0)!=-1){
+					//Match found
+					results.put(LevenshteinDistance.computeLevenshteinDistance(sds.getName(), pattern), ad);
+				}
+			}
+		}
 		
 		if(searchDepth>0)
 			result = new DFAgentDescription[searchDepth];
