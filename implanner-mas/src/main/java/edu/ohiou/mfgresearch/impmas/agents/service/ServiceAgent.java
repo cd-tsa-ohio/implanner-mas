@@ -61,10 +61,21 @@ public class ServiceAgent extends MfgAgent {
 	}
 
 	@Override
-	public ServiceDescription[] getServices() {
+	public ServiceDescription[] getServices(){
 		// TODO Auto-generated method stub
-		AbstractService[] ms = (AbstractService[]) getArguments();
-		this.service = ms[0];
+		String serviceClass = (String) getArguments()[0];
+		try {
+			this.service = (AbstractService) Class.forName(serviceClass).newInstance();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		service.setServiceAgent(this);
 		ServiceDescription[] services = new ServiceDescription[]{new ServiceDescription(){{
 			setName(service.getServiceDescription());

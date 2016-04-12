@@ -639,7 +639,7 @@ public class IMPlannerAgent extends MfgAgent {
 			System.out.println("Inside Process Network Behavior");
 				
 				try {
-					DFAgentDescription[] dealers = MfgDF.searchByService(myAgent, "Process Network Dealer", IMPlannerProperties.AgentType.Market.toString(), 1);
+					DFAgentDescription[] dealers = MfgDF.getInstance().searchByService(myAgent, "Process Network Dealer", IMPlannerProperties.AgentType.Market.toString(), 1);
 					//for testing only one dealer is chosen, in future we need to take care of all dealers
 					if(dealers!=null){
 						for(DFAgentDescription ad:dealers){
@@ -703,7 +703,7 @@ public class IMPlannerAgent extends MfgAgent {
 			logger.info("in FeatureRecognitionBehavior.action" );
 			// TODO Auto-generated method stub
 			try {
-				DFAgentDescription[] dealers = MfgDF.searchByService(myAgent, "systemSimulationDealerAgent", IMPlannerProperties.AgentType.Market.toString(), 1);
+				DFAgentDescription[] dealers = MfgDF.getInstance().searchByService(myAgent, "systemSimulationDealerAgent", IMPlannerProperties.AgentType.Market.toString(), 1);
 				//for testing only one dealer is chosen, in future we need to take care of all dealers
 				if(dealers!=null){
 					for(DFAgentDescription ad:dealers){
@@ -779,7 +779,7 @@ public class IMPlannerAgent extends MfgAgent {
 			logger.info("in FeatureRecognitionBehavior.action" );
 			// TODO Auto-generated method stub
 			try {
-				DFAgentDescription[] dealers = MfgDF.searchByService(myAgent, "featureRecognitionDealerAgent", IMPlannerProperties.AgentType.Market.toString(), 1);
+				DFAgentDescription[] dealers = MfgDF.getInstance().searchByService(myAgent, "featureRecognitionDealerAgent", IMPlannerProperties.AgentType.Market.toString(), 1);
 				//for testing only one dealer is chosen, in future we need to take care of all dealers
 				if(dealers!=null){
 					for(DFAgentDescription ad:dealers){
@@ -895,7 +895,7 @@ public class IMPlannerAgent extends MfgAgent {
 				System.out.println("facts created /n" + buffer.toString());
 				
 				try {
-					DFAgentDescription[] dealers = MfgDF.searchByService(myAgent, "Process Selection Dealer", IMPlannerProperties.AgentType.Market.toString(), 1);
+					DFAgentDescription[] dealers = MfgDF.getInstance().searchByService(myAgent, "Process Selection Dealer", IMPlannerProperties.AgentType.Market.toString(), 1);
 					//for testing only one dealer is chosen, in future we need to take care of all dealers
 					if(dealers!=null){
 						for(DFAgentDescription ad:dealers){

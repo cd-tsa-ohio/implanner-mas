@@ -57,15 +57,16 @@ public class ProcessSelectionDealerAgent extends MfgAgent {
 
 	@Override
 	public ServiceDescription[] getServices() {
-		// TODO Auto-generated method stub
-		Markets[] ms = (Markets[]) getArguments();
-		this.m = ms[0];
+//		if (getArguments()[0] instanceof Markets){
+//		Markets[] ms = (Markets[]) getArguments();
+//		this.m = ms[0];
+//	}
 		ServiceDescription[] services = new ServiceDescription[]{new ServiceDescription(){{
-			setName(m.getText());
-			setType(AgentType.Market.toString());
-			Integer performative = new Integer(ACLMessage.QUERY_REF);
-			addProperties(new Property(performative.toString(), new HaveVendor()));
-		}
+				setName((String) getArguments()[0]);
+				setType(AgentType.Market.toString());
+				Integer performative = new Integer(ACLMessage.QUERY_REF);
+				addProperties(new Property(performative.toString(), new HaveVendor()));
+			}
 		}};
 		return services;
 	}
@@ -177,7 +178,7 @@ public class ProcessSelectionDealerAgent extends MfgAgent {
 				ACLMessage msg = createMessage(ACLMessage.REQUEST);
 				
 				//Search all vendors 
-				DFAgentDescription[] vendors = MfgDF.searchByService(this, "Process Selection Member Service", IMPlannerProperties.AgentType.Vendor.toString(), 0);
+				DFAgentDescription[] vendors = MfgDF.getInstance().searchByService(this, "Process Selection Member Service", IMPlannerProperties.AgentType.Vendor.toString(), 0);
 				for(DFAgentDescription ad:vendors){
 					msg.addReceiver(ad.getName());
 				}

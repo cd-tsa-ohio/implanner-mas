@@ -40,16 +40,17 @@ public class MfgDF implements Serializable{
 	 * which is automatically generated
 	 * String is the service description
 	 */
-	private static HashMap<Long, String> register = new HashMap<Long, String>();
+	//private static HashMap<Long, String> register = new HashMap<Long, String>();
 
-	private static final MfgDF instance = null;
+	private static MfgDF instance = null;
 	private static Random rand = null;
 	
 	private static AID systemAgent = null;
 
 	public static MfgDF getInstance(){
 		if(instance == null){
-			return new MfgDF();
+			instance = new MfgDF();
+			return instance;
 		}
 		else
 			return instance;
@@ -70,9 +71,9 @@ public class MfgDF implements Serializable{
 		dfd.setName(a.getAID());
 		if(services != null){
 			for(ServiceDescription s:services){
-				Long l = rand.nextLong();
-				register.put(l, s.getName());
-				s.setName(l.toString());
+//				Long l = rand.nextLong();
+				//register.put(l, s.getName());
+//				s.setName(l.toString());
 				dfd.addServices(s);
 			}
 		}
@@ -89,7 +90,7 @@ public class MfgDF implements Serializable{
 		DFAgentDescription dfd = new DFAgentDescription();
 		dfd.setName(a.getAID());
 		Long l = rand.nextLong();
-		register.put(l, name);
+		//register.put(l, name);
 		DFService.register(a, dfd);  
 	}
 
@@ -101,7 +102,7 @@ public class MfgDF implements Serializable{
 	 * @return
 	 * @throws FIPAException
 	 */
-	public static DFAgentDescription[] searchByService(Agent a, String pattern, String type, int searchDepth) throws FIPAException{
+	public DFAgentDescription[] searchByService(Agent a, String pattern, String type, int searchDepth) throws FIPAException{
 
 		SearchPattern sp = new SearchPattern();
 		TreeMap<Integer, DFAgentDescription> results = new TreeMap<Integer, DFAgentDescription>();
@@ -120,9 +121,9 @@ public class MfgDF implements Serializable{
 			Iterator it = ad.getAllServices();
 			while(it.hasNext()){
 				ServiceDescription sds = (ServiceDescription) it.next();
-				if(sp.match_main(register.get(Long.parseLong(sds.getName())), pattern, 0)!=-1){
+				if(sp.match_main(sds.getName(), pattern, 0)!=-1){
 					//Match found
-					results.put(LevenshteinDistance.computeLevenshteinDistance(register.get(Long.parseLong(sds.getName())), pattern), ad);
+					results.put(LevenshteinDistance.computeLevenshteinDistance(sds.getName(), pattern), ad);
 				}
 			}
 		}

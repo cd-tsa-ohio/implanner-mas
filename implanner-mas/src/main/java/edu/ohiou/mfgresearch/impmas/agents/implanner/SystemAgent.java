@@ -114,14 +114,14 @@ public class SystemAgent extends MfgAgent {
 		frame.setVisible(true);
 
 		//create markets and launch dealers
-		for(Markets m:Markets.marketAutoList){
-				launchAgent(m);
-		}
+//		for(Markets m:Markets.marketAutoList){
+//				launchAgent(m);
+//		}
 		
 		//create services by default
-		for(ServiceClass s:ServiceClass.servicesList){
-			launchAgent(s);
-		}
+//		for(ServiceClass s:ServiceClass.servicesList){
+//			launchAgent(s);
+//		}
 		
 		//create vendor serivce agent
 //		try {
