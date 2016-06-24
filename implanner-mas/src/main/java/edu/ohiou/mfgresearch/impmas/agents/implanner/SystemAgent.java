@@ -251,6 +251,10 @@ public class SystemAgent extends MfgAgent {
 				add(createMenuItem("Save process Excel", -1, ActionEvent.CTRL_MASK, 
 						new OperationSelectionListener(), null, "Perform Save process in Excel",
 						new String[]{"Save process Excel"}));
+				//addition to implement partmodel to simpm individual service
+				add(createMenuItem("Convert to Ontology", -1, ActionEvent.CTRL_MASK, 
+						new OperationSelectionListener(), null, "Convert part design to owl axioms",
+						new String[]{"PartModel Assertion"}));
 			}});
 			menuBar.add(new JMenu("Launch Service"){/**
 				 * 
@@ -402,7 +406,7 @@ public class SystemAgent extends MfgAgent {
 					//save in frame list
 					instanceList.put(SystemAgent.activeInstanceID, new InstanceTable(frame)); 
 					//launch new IMPlanner agent
-					launchAgent(IMPlannerAgent.class, "IMPlanner"+SystemAgent.activeInstanceID, new Object[]{frame, SystemAgent.activeInstanceID}, true, null, 0);
+					launchAgent(IMPlannerAgent.class, "IMPlanner"+SystemAgent.activeInstanceID, new Object[]{frame, SystemAgent.activeInstanceID}, false, null, 0);
 				} catch (PropertyVetoException e) {
 					// TODO Auto-generated catch block
 					logger.severe("Internal IMPlanner window can not be created \n"+e.getMessage());
@@ -536,7 +540,8 @@ public class SystemAgent extends MfgAgent {
 		}
 
 		/**
-		 * This behavior send request to IMPlanner Agent to perform an operation
+		 * This behavior send request to IMPlanner Agent to perform an operation marked by a number
+		 * this number should select particular behavior in active IMPlannerAgent
 		 * @author sarkara1
 		 *
 		 */
@@ -565,6 +570,9 @@ public class SystemAgent extends MfgAgent {
 				else if(e.getActionCommand().equals("Save process Excel")){
 					operation = 6;
 				}
+				else if(e.getActionCommand().equals("PartModel Assertion")){
+					operation = 7;
+				};
 					
 				ACLMessage message = createMessage(ACLMessage.REQUEST);
 				message.addReceiver(instanceList.get(SystemAgent.activeInstanceID).getImplannerAgent()); //get the implanner agent linked to active instanceID
