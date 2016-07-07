@@ -39,7 +39,8 @@ public class IMPlannerProperties {
 	public static enum AgentType{
 		System,    //not used for registration
 		Market,   
-		Vendor,     //Vendor agent can act as a 
+		Vendor,     //Vendor agent can act as a service
+		Service,   //new lambda type service agents
         ImPlanner
 	}
 	
