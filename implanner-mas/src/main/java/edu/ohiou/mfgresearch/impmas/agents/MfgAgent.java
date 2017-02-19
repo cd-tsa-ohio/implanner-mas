@@ -20,8 +20,10 @@ import edu.ohiou.mfgresearch.implanner.MfgConcept;
 //import examples.content.eco.elements.Owns;
 //>>>>>>> 1.8
 
+import edu.ohiou.mfgresearch.impmas.agents.IMPlannerProperties.AgentType;
 import edu.ohiou.mfgresearch.impmas.agents.service.AbstractService;
 import edu.ohiou.mfgresearch.impmas.agents.service.ServiceAgent;
+import edu.ohiou.mfgresearch.impmas.mfgOntology.HaveVendor;
 import edu.ohiou.mfgresearch.impmas.mfgOntology.IMPlannerOntology;
 import edu.ohiou.mfgresearch.impmas.semantics.ManagementData;
 import edu.ohiou.mfgresearch.impmas.semantics.MfgDF;
@@ -49,6 +51,7 @@ import jade.core.behaviours.OneShotBehaviour;
 import jade.domain.DFService;
 import jade.domain.FIPAException;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.Property;
 import jade.domain.FIPAAgentManagement.SearchConstraints;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.ACLMessage;
@@ -165,7 +168,18 @@ public abstract class MfgAgent extends Agent {
 	 * Return all services provided by this agent
 	 * @return
 	 */
-	public abstract ServiceDescription[] getServices();
+
+	public ServiceDescription[] getServices() {
+		ServiceDescription[] services = new ServiceDescription[]{new ServiceDescription(){{
+			setName((String) getArguments()[0]);
+			setType(AgentType.Market.toString());
+			Integer performative = new Integer(ACLMessage.QUERY_REF);
+			addProperties(new Property(performative.toString(), new HaveVendor()));
+		}
+		}};
+		return services;
+	}
+
 
 	/**
 	 * Return Finite State Machine for the agent 

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<MfgPartModel partName="slot-hole" partMaterial="material" batchSize="1">
+    <Stock>edu.ohiou.mfgresearch.implanner.geometry.Stock needs to implement writeXML() method</Stock>
+    <featureList>
+                <edu.ohiou.mfgresearch.implanner.features.Hole  featureName="SIMPLE HOLE(3)">
+                                <Dimensions        radius = '0.5'        holeAxis = '-0 -0 1'        axisPoint = '7.476004 6.632166 8'        bottomDistance = '-10.0'/>
+<nextFeature name = "RECTANGULAR_SLOT(2)">
+</nextFeature>
+<Tolerances>
+</Tolerances>
+        <processList>          <edu.ohiou.mfgresearch.implanner.processes.TwistDrilling procName="drilling-SIMPLE HOLE(3)" processingTime ="12.576637257017962">
+              <Machine Name="CncDrillSlow"/>
+              <MfgActivity Name="T-drilling-SIMPLE HOLE(3)">
+</MfgActivity>
+              <Tool Name="T107" FluteLength="10.0" Material="Hss" Diameter="1.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.02" Speed="40.0" DiaMinimum ="0.25" DiaMaximum ="1.0">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.TwistDrilling>
+          <edu.ohiou.mfgresearch.implanner.processes.TwistDrilling procName="drilling-SIMPLE HOLE(3)" processingTime ="2.7410619662731457">
+              <Machine Name="CncDrillFast"/>
+              <MfgActivity Name="T-drilling-SIMPLE HOLE(3)">
+</MfgActivity>
+              <Tool Name="T507" FluteLength="10.0" Material="Carbide" Diameter="1.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.02" Speed="30.0" DiaMinimum ="0.25" DiaMaximum ="1.0">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.TwistDrilling>
+        </processList>                </edu.ohiou.mfgresearch.implanner.features.Hole>
+                <edu.ohiou.mfgresearch.implanner.features.Slot  featureName="RECTANGULAR_SLOT(2)">
+                         <Dimensions slotPoint = '7.077294 6.352194 10'        normal = '0 0 1'        sweep = '0 1 0'        width = '2.0'        bottomDist = '-0.0'        positiveSweepLength = '2.5'        negativeSweepLength = '2.5'/>
+<previousFeature name = "SIMPLE HOLE(3)">
+</previousFeature>
+<Tolerances>
+</Tolerances>
+        <processList>          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncVMillComb"/>
+              <MfgActivity Name="T-end-milling-slotting-RECTANGULAR_SLOT(2)">
+</MfgActivity>
+              <Tool Name="T205" FluteLength="10.0" Material="Hss" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.005" Speed="105.0" DiaMinimum ="0.75" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncVMillComb"/>
+              <Tool Name="T605" FluteLength="5.0" Material="Carbide" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.SideMilling procName="side-milling-RECTANGULAR_SLOT(2)" processingTime ="20.258285960648465">
+              <Machine Name="CncHMillComb"/>
+              <MfgActivity Name="T-side-milling-RECTANGULAR_SLOT(2)">
+</MfgActivity>
+              <Tool Name="T206" FluteLength="10.0" Material="Hss" Diameter="5.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.008" Speed="120.0" DiaMinimum ="0.0" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.SideMilling>
+          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncHMillComb"/>
+              <Tool Name="T205" FluteLength="10.0" Material="Hss" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.005" Speed="105.0" DiaMinimum ="0.75" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.SideMilling procName="side-milling-RECTANGULAR_SLOT(2)" processingTime ="2.8361600344907854">
+              <Machine Name="CncHMillComb"/>
+              <Tool Name="T606" FluteLength="2.0" Material="Carbide" Diameter="5.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.007" Speed="340.0" DiaMinimum ="0.0" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.SideMilling>
+          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncHMillComb"/>
+              <Tool Name="T605" FluteLength="5.0" Material="Carbide" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncVMillSlow"/>
+              <MfgActivity Name="T-end-milling-slotting-RECTANGULAR_SLOT(2)">
+</MfgActivity>
+              <Tool Name="T205" FluteLength="10.0" Material="Hss" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.005" Speed="105.0" DiaMinimum ="0.75" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.SideMilling procName="side-milling-RECTANGULAR_SLOT(2)" processingTime ="20.258285960648465">
+              <Machine Name="CncHMillSlow"/>
+              <MfgActivity Name="T-side-milling-RECTANGULAR_SLOT(2)">
+</MfgActivity>
+              <Tool Name="T206" FluteLength="10.0" Material="Hss" Diameter="5.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.008" Speed="120.0" DiaMinimum ="0.0" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.SideMilling>
+          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncHMillSlow"/>
+              <Tool Name="T205" FluteLength="10.0" Material="Hss" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.005" Speed="105.0" DiaMinimum ="0.75" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncVMillFast"/>
+              <MfgActivity Name="T-end-milling-slotting-RECTANGULAR_SLOT(2)">
+</MfgActivity>
+              <Tool Name="T605" FluteLength="5.0" Material="Carbide" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting procName="end-milling-slotting-RECTANGULAR_SLOT(2)" processingTime ="0.0">
+              <Machine Name="CncHMillFast"/>
+              <MfgActivity Name="T-end-milling-slotting-RECTANGULAR_SLOT(2)">
+</MfgActivity>
+              <Tool Name="T605" FluteLength="5.0" Material="Carbide" Diameter="2.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+          </edu.ohiou.mfgresearch.implanner.processes.EndMillingSlotting>
+          <edu.ohiou.mfgresearch.implanner.processes.SideMilling procName="side-milling-RECTANGULAR_SLOT(2)" processingTime ="2.8361600344907854">
+              <Machine Name="CncHMillFast"/>
+              <Tool Name="T606" FluteLength="2.0" Material="Carbide" Diameter="5.0">
+                  <InitPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <CurrPosition X="10.0" Y="10.0" Z="10.0"/>
+                  <Normal X="0.0" Y="1.0" Z="0.0"/>
+              </Tool>
+              <CuttingParameter Feed="0.007" Speed="340.0" DiaMinimum ="0.0" DiaMaximum ="3.4028235E38">
+              </CuttingParameter>
+          </edu.ohiou.mfgresearch.implanner.processes.SideMilling>
+        </processList>                </edu.ohiou.mfgresearch.implanner.features.Slot>
+    </featureList>
+    <partActivityList>
+        <PartActivity  partactivityName="pp1" partquantity="100" partcost="40.0">
+            <machineActivityList>
+            </machineActivityList>
+            <forPart>slot-hole</forPart>
+        </PartActivity>
+        <PartActivity  partactivityName="pp1" partquantity="100" partcost="40.0">
+            <machineActivityList>
+            </machineActivityList>
+            <forPart>slot-hole</forPart>
+        </PartActivity>
+        <PartActivity  partactivityName="partAct" partquantity="3" partcost="3.0">
+            <machineActivityList>
+            </machineActivityList>
+            <forPart>slot-hole</forPart>
+        </PartActivity>
+        <PartActivity  partactivityName="partAct" partquantity="3" partcost="3.0">
+            <machineActivityList>
+            </machineActivityList>
+            <forPart>slot-hole</forPart>
+        </PartActivity>
+    </partActivityList>
+    <processPlan>pp1</processPlan>
+</MfgPartModel>
