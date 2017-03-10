@@ -1,0 +1,100 @@
+node CncVMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-,
+node CncHMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-,
+node E
+node CncVMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-,
+node CncHMillFast[0.0]-RSLOT(4)-,
+node CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-,
+node CncHMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-,
+node CncHMillComb[0.0]-RSLOT(4)-,
+node S
+node CncHMillComb[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-,
+node CncDrillFast[0.0]-SHOLE(12)-,
+node CncVMillComb[0.0]-RSLOT(4)-,
+node CncVMillComb[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-,
+node CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-,
+node CncVMillSlow[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-,
+node CncVMillSlow[0.0]-RSLOT(4)-,
+node CncVMillFast[0.0]-RSLOT(3)-,RSLOT(2)-,
+node CncVMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-,
+node CncDrillSlow[0.0]-SHOLE(11)-,SHOLE(7)-,
+node CncHMillFast[0.0]-RSLOT(3)-,RSLOT(2)-,
+node CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-,
+node CncDrillSlow[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-,
+node CncDrillSlow[0.0]-SHOLE(12)-,
+node CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-,
+node CncDrillFast[0.0]-SHOLE(13)-,SHOLE(12)-,
+node CncHMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-,
+node CncVMillSlow[0.0]-RSLOT(3)-,RSLOT(2)-,
+node CncHMillSlow[0.0]-RSLOT(4)-,
+node CncHMillSlow[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-,
+node CncVMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-,
+node CncHMillSlow[0.0]-RSLOT(3)-,RSLOT(2)-,
+node CncVMillComb[0.0]-RSLOT(3)-,RSLOT(2)-,
+node CncHMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-,
+node CncVMillFast[0.0]-RSLOT(4)-,
+node CncHMillComb[0.0]-RSLOT(3)-,RSLOT(2)-,
+node CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(12)-,
+arc  CncHMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(12)-, 10.523308725259927
+arc  CncVMillComb[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(12)-, 10.523308725259927
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncVMillComb[0.0]-RSLOT(3)-,RSLOT(2)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, CncHMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, 0.0
+arc  CncVMillFast[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 29.131598544317114
+arc  CncVMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(12)-, 4.587083290497917
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncDrillSlow[0.0]-SHOLE(11)-,SHOLE(7)-, 18.60828981905719
+arc  CncHMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(12)-, 2.2935416452489585
+arc  CncVMillFast[0.0]-RSLOT(4)-, E 0.0
+arc  CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, CncHMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, CncVMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, 0.0
+arc  CncHMillSlow[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(12)-, 4.587083290497917
+arc  CncHMillSlow[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 5.8597192034104495
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncHMillFast[0.0]-RSLOT(3)-,RSLOT(2)-, 0.0
+arc  S CncDrillSlow[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, 21.30328351698961
+arc  CncVMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(12)-, 21.046617450519854
+arc  CncVMillSlow[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 29.131598544317114
+arc  CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-, CncVMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-, CncVMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, 0.0
+arc  CncHMillComb[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(12)-, 2.2935416452489585
+arc  CncVMillComb[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 29.131598544317114
+arc  CncDrillFast[0.0]-SHOLE(12)-, CncVMillComb[0.0]-RSLOT(4)-, 0.0
+arc  CncHMillComb[0.0]-RSLOT(4)-, E 0.0
+arc  CncVMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(12)-, 2.2935416452489585
+arc  CncVMillComb[0.0]-RSLOT(4)-, E 0.0
+arc  CncHMillComb[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 29.131598544317114
+arc  CncHMillSlow[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 29.131598544317114
+arc  CncHMillComb[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 5.8597192034104495
+arc  CncVMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(12)-, 4.587083290497917
+arc  CncVMillComb[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(12)-, 2.2935416452489585
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-, 3.566177558161491
+arc  CncHMillFast[0.0]-RSLOT(4)-, E 0.0
+arc  CncVMillFast[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 5.8597192034104495
+arc  CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, CncVMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, 0.0
+arc  CncHMillFast[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 29.131598544317114
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncHMillComb[0.0]-RSLOT(3)-,RSLOT(2)-, 0.0
+arc  S CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, 4.64302333062594
+arc  CncVMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(12)-, 10.523308725259927
+arc  CncHMillSlow[0.0]-RSLOT(4)-, E 0.0
+arc  CncVMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(12)-, 10.523308725259927
+arc  CncHMillFast[0.0]-RSLOT(3)-,RSLOT(2)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, 5.8597192034104495
+arc  CncHMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(12)-, 10.523308725259927
+arc  CncVMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(12)-, 21.046617450519854
+arc  CncHMillComb[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(12)-, 10.523308725259927
+arc  CncDrillFast[0.0]-SHOLE(12)-, CncVMillSlow[0.0]-RSLOT(4)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-, CncHMillSlow[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-, CncHMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-, CncHMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, 0.0
+arc  CncHMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(12)-, 4.587083290497917
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncVMillFast[0.0]-RSLOT(3)-,RSLOT(2)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncHMillSlow[0.0]-RSLOT(3)-,RSLOT(2)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(11)-,SHOLE(7)-, CncVMillSlow[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, 0.0
+arc  CncHMillSlow[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(12)-, 2.2935416452489585
+arc  CncDrillFast[0.0]-SHOLE(16)-,SHOLE(15)-,SHOLE(14)-, CncVMillSlow[0.0]-RSLOT(3)-,RSLOT(2)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(12)-, CncVMillFast[0.0]-RSLOT(4)-, 0.0
+arc  CncVMillSlow[0.0]-RSLOT(4)-, E 0.0
+arc  CncHMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(13)-,SHOLE(12)-, 4.587083290497917
+arc  CncDrillFast[0.0]-SHOLE(12)-, CncHMillComb[0.0]-RSLOT(4)-, 0.0
+arc  CncHMillFast[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(12)-, 21.046617450519854
+arc  CncVMillFast[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, CncDrillFast[0.0]-SHOLE(12)-, 2.2935416452489585
+arc  CncHMillComb[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(12)-, 21.046617450519854
+arc  CncVMillSlow[0.0]-RSLOT(6)-,RSLOT(3)-,RSLOT(2)-,RSLOT(1)-, CncDrillSlow[0.0]-SHOLE(13)-,SHOLE(12)-, 21.046617450519854
+arc  CncDrillFast[0.0]-SHOLE(13)-,SHOLE(11)-,SHOLE(7)-, CncVMillComb[0.0]-RSLOT(6)-,RSLOT(5)-,RSLOT(1)-, 0.0
+arc  CncDrillFast[0.0]-SHOLE(12)-, CncHMillSlow[0.0]-RSLOT(4)-, 0.0
