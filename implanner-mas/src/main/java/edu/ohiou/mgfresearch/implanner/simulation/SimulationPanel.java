@@ -75,18 +75,17 @@ protected void configureButtons() {
 		}
 		return showSimulationButton;
 	}
-	
+
 	void showSimulationButton_actionPerformed(java.awt.event.ActionEvent e) {
 		LinkedList<MachineSequenceObject> machineList = machineSequence;
 		Map<String, LinkedList<MachineSequenceObject>> partMap = new HashMap<String, LinkedList<MachineSequenceObject>>();
-		JOptionPane.showMessageDialog(this, "Trying the code in showSimulationButton_actionPerformed");
 		partMap.put(this.partModel.getPartName(), machineList);	
-				ImplannerSimulator simulator = new ImplannerSimulator(partMap);
-				simulator.display("My Simulation");
+		ImplannerSimulator simulator = new ImplannerSimulator(partMap);
+		simulator.display("My Simulation");
 
 
 	}
-	
+
 
 	
 	/**
@@ -124,7 +123,7 @@ protected void configureButtons() {
 		for (Object o : netObj) {
 			NetObject n = (NetObject) o;		
 //		System.out.println ("net object is " + n.toString());
-		System.out.println( n.toGraphString() + " 5.0");
+		System.out.println( n.toGraphString());
 		}
 		System.out.println("======> Net objects from process canvas");
 		try {
