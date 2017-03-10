@@ -1,6 +1,7 @@
 package edu.ohiou.mgfresearch.implanner.simulation;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -78,10 +79,10 @@ protected void configureButtons() {
 	void showSimulationButton_actionPerformed(java.awt.event.ActionEvent e) {
 		LinkedList<MachineSequenceObject> machineList = machineSequence;
 		Map<String, LinkedList<MachineSequenceObject>> partMap = new HashMap<String, LinkedList<MachineSequenceObject>>();
-		JOptionPane.showMessageDialog(this, "incomplete code in showSimulationButton_actionPerformed");
+		JOptionPane.showMessageDialog(this, "Trying the code in showSimulationButton_actionPerformed");
 		partMap.put(this.partModel.getPartName(), machineList);	
-		//		ImplannerSimulator simulator = new ImplannerSimulator(partMap);
-		//		simulator.display("My Simulation");
+				ImplannerSimulator simulator = new ImplannerSimulator(partMap);
+				simulator.display("My Simulation");
 
 
 	}
@@ -119,10 +120,18 @@ protected void configureButtons() {
 		example.net = new Network(example, example.useGhosal);
 		example.net.display();
 		LinkedList netObj = example.net.netObjects();
+		System.out.println("======> Net objects from canvas");
 		for (Object o : netObj) {
 			NetObject n = (NetObject) o;		
 //		System.out.println ("net object is " + n.toString());
 		System.out.println( n.toGraphString() + " 5.0");
+		}
+		System.out.println("======> Net objects from process canvas");
+		try {
+			example.net.writeNetObjectsProcess(example.getPartName() + ".graph");
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 //		try {
 //			example.writeXMLFile(new File ("example.xml"));
