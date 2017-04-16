@@ -178,7 +178,7 @@ public class IMPlannerAgent extends MfgAgent {
 		try {
 			logger.info("Following message is recieved from DealerAgent \n"+message);
 			ce = manager.extractContent(message);
-			
+			//this is abondoned term
 			if(ce instanceof ResultIs){
 				ResultIs result = (ResultIs) ce;
 				ManagementData managementData = result.getManagementData();
@@ -281,6 +281,8 @@ public class IMPlannerAgent extends MfgAgent {
 			case 6:
 				addBehaviour(new SaveProcesstoExcelBehavior());
 				break;
+			case 7:
+				addBehaviour(new PartModelAssertionBehavior());
 			default:
 				break;
 			}
@@ -348,6 +350,7 @@ public class IMPlannerAgent extends MfgAgent {
 	        }
 		 return result;
 		}
+		
 		
 		private void addFeatureListToExcel(Map<String, MfgPartModel> partModelMap) {
 			// TODO Auto-generated method stub
@@ -951,6 +954,23 @@ public class IMPlannerAgent extends MfgAgent {
 	}
 	
 	
+	
+	public class PartModelAssertionBehavior extends OneShotBehaviour{
+
+		@Override
+		public void action() {
+			
+			logger.info("in PartModelAssertionBehavior action" );
+			
+			if (partModel != null) {
+				
+			}	
+			else{
+				logger.info("This command is can only be performed after FeatureRecognitionService is completed");
+			}
+		}
+		
+	}
 	
 	
 	public static String makePartFactString( MfgPartModel aModel)

@@ -1,4 +1,4 @@
-package edu.ohiou.mgfresearch.implanner.simulation;
+package edu.ohiou.mfgresearch.implanner.simulation;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

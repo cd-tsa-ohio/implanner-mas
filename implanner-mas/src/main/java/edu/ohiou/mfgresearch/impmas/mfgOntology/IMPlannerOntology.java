@@ -9,6 +9,7 @@ import edu.ohiou.mfgresearch.implanner.geometry.Cylinder;
 import edu.ohiou.mfgresearch.implanner.geometry.ExtrudeSolid;
 import edu.ohiou.mfgresearch.implanner.geometry.PartModel;
 import edu.ohiou.mfgresearch.implanner.geometry.Solid;
+import edu.ohiou.mfgresearch.implanner.geometry.Stock;
 import edu.ohiou.mfgresearch.implanner.parts.MfgPartModel;
 import edu.ohiou.mfgresearch.implanner.processes.Boring;
 import edu.ohiou.mfgresearch.implanner.processes.CenterDrilling;
@@ -85,6 +86,7 @@ public class IMPlannerOntology extends BeanOntology implements IMPlannerVocabula
 			//add(CADObject.class);              //pass
 			add(PartModel.class);              //pass
 			add(MfgPartModel.class);           //pass
+			add(Stock.class);
 			add(CuttingParameter.class);       //pass 
 			add(MfgFeature.class);             //pass
 			//add(Slot.class);             		//pass

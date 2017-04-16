@@ -7,6 +7,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Random;
 import java.util.TreeMap;
 //<<<<<<< MfgAgent.java
@@ -432,7 +433,14 @@ public abstract class MfgAgent extends Agent {
 			}
 			else{
 				//create the container and create agent in that
-				ProfileImpl pContainer = new ProfileImpl(host, port, null);
+				jade.util.leap.Properties implannerProperty = new jade.util.leap.Properties();
+				try {
+					implannerProperty.load("src/main/resources/META-INF/jade-agent-implanner.properties");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				ProfileImpl pContainer = new ProfileImpl(implannerProperty);
 				ContainerController containerRef = rt.createAgentContainer(pContainer);
 				a=containerRef.createNewAgent(name, agentClass.getName(), arguments);
 			}
