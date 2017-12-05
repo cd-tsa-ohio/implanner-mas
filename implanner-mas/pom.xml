@@ -154,10 +154,6 @@
     	<artifactId>jade</artifactId>
     	<version>4.3.3</version>
     </dependency>
-    <dependency>  
-    	<groupId>edu.ohiou.mfgresearch</groupId>
-  		<artifactId>JadeLambda</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
+
   </dependencies>
 </project>
