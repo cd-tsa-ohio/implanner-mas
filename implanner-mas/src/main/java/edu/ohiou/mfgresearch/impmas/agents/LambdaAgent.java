@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 import edu.ohiou.mfgresearch.implanner.MfgConcept;
 import edu.ohiou.mfgresearch.impmas.agents.IMPlannerProperties.AgentType;
 import edu.ohiou.mfgresearch.impmas.semantics.ServiceAction;
-import edu.ohiou.mfgresearch.lambda.Anything;
+import edu.ohiou.mfgresearch.lambda.Uni;
 import edu.ohiou.mfgresearch.lambda.functions.Cons;
 import edu.ohiou.mfgresearch.lambda.functions.Func;
 import edu.ohiou.mfgresearch.lambda.functions.Pred;
@@ -41,20 +41,20 @@ public abstract class LambdaAgent extends Agent {
 	protected Properties property;
 	
 	//Function to get property values 
-	Function<String, Function<Cons<String>, Func<Properties, Anything<Properties>>>> getProperty =
+	Function<String, Function<Cons<String>, Func<Properties, Uni<Properties>>>> getProperty =
 			x -> c -> y -> {
-				Anything.of(y.getProperty(x))
+				Uni.of(y.getProperty(x))
 				  .filter(s1->s1.contains(","))
-				  .fMap2Stream(s2->Anything.of(s2.split(",")))
+				  .fMap2Stream(s2->Uni.of(s2.split(",")))
 				  .flatMap(s3->Stream.of(s3.set(c)))
 				  .forEach(s4->s4.onFailure(e->logger.severe("Error while configuring from property key " + x + "/n" + e.getMessage())));;
-				return Anything.of(y);
+				return Uni.of(y);
 			};	
 			
 	/**
 	 * MEssage Processor to be supplied by concrete agent 	
 	 */
-	protected Func<ACLMessage, Anything<MfgConcept>> messageProcessor;			
+	protected Func<ACLMessage, Uni<MfgConcept>> messageProcessor;			
 	
 	protected Func<MfgConcept, MfgConcept> service;
 			
@@ -65,9 +65,9 @@ public abstract class LambdaAgent extends Agent {
 	 */
 	Function<ACLMessage, Func<ACLMessage, ACLMessage>> behavior =
 		om->im->{
-			Anything.of(im)
-					.fMap(messageProcessor)
-					.set(i->getContentManager().fillContent(om, (AbsContentElement) service.apply(i)))
+			Uni.of(im)
+//					.fMap(messageProcessor)
+//					.set(i->getContentManager().fillContent(om, (AbsContentElement) service.apply(i)))
 					.onFailure(e->logger.severe("Error while configuring agent service from agent properties " + "\n" + e.getMessage()))
 					.onSuccess(t->logger.info("Agent "+ getName()+ "performed service successfully"));
 			return om;
@@ -78,47 +78,47 @@ public abstract class LambdaAgent extends Agent {
 		
 		//Configure agent from supplied property file
 		//create a new DFAgentDescription
-		Anything.of(DFAgentDescription::new)
-				//create a new ServiceDescription
-				.set(df->Anything.of(ServiceDescription::new)
-								 //set ServiceDescription name	
-								 .set(sd->sd.setName(getLocalName()))
-								 //Set Service Type (one of AgentType)
-								 .set(sd->sd.setType(AgentType.Service.toString()))
-								 //create a new Property table
-								 .set(sd->Anything.of(Properties::new)
-										 		  //load the property table from the agent property file supplied as argument to this agent
-												  .set(p->p.load(getClass().getResourceAsStream(getArg(1))))
-												  //get the ontology supplied in property file
-												  .fMap(getProperty.apply(getClass().getName()+".ontology")
-														  			//register the ontology for this agent after instantiating by reflection 
-																   .apply(s->Anything.of(s).set(s1->getContentManager().registerOntology((Ontology) Class.forName(s1).getConstructor().newInstance()))
-																		 				   //also add the ontology to Service Description
-																		   				   .onSuccess(s2->sd.addOntologies(s2))))
-												  //get the language specified in property file (one of SL family of languages) 
-												  .fMap(getProperty.apply(getClass().getName()+".codec")
-														  			//register the language for this agent after instantiating by reflection 
-																   .apply(s->Anything.of(s).set(s1->getContentManager().registerLanguage((Codec) Class.forName(s1).getConstructor().newInstance()))
-																		 				   //also add the language to Service Description
-																		   				   .onSuccess(s2->sd.addLanguages(s2))))
-												  //add all properties read from property file to property field of Service Description (this should also include IOPR of the service)
-												  .onSuccess(p->{
-													  //BTW, save the property for future use
-													  this.property = p;
-													  p.forEach((k,v)->sd.addProperties(new Property((String) k, v)));
-												  }))
-								 //add the service to DFAgentDescription
-								.onSuccess(sd->df.addServices(sd)))
-				  //register the DFServiceDescription to this agent via DFService
-				  .set(df->DFService.register(this, df))
-				  //on failure log the exception message
-				  .onFailure(e->logger.severe("Error while configuring agent service from agent properties " + "\n" + e.getMessage()))
-				  //also delete this agent
-				  .onFailure(e->this.doDelete())
-				  //on success log a success message and save the property for future use
-				  .onSuccess(df->{					  
-					  logger.info("Agent "+ getName()+ "is ready");
-				  });
+//		Algo.of(DFAgentDescription::new)
+//				//create a new ServiceDescription
+//				.set(df->Algo.of(ServiceDescription::new)
+//								 //set ServiceDescription name	
+//								 .set(sd->sd.setName(getLocalName()))
+//								 //Set Service Type (one of AgentType)
+//								 .set(sd->sd.setType(AgentType.Service.toString()))
+//								 //create a new Property table
+//								 .set(sd->Algo.of(Properties::new)
+//										 		  //load the property table from the agent property file supplied as argument to this agent
+//												  .set(p->p.load(getClass().getResourceAsStream(getArg(1))))
+//												  //get the ontology supplied in property file
+//												  .fMap(getProperty.apply(getClass().getName()+".ontology")
+//														  			//register the ontology for this agent after instantiating by reflection 
+//																   .apply(s->Algo.of(s).set(s1->getContentManager().registerOntology((Ontology) Class.forName(s1).getConstructor().newInstance()))
+//																		 				   //also add the ontology to Service Description
+//																		   				   .onSuccess(s2->sd.addOntologies(s2))))
+//												  //get the language specified in property file (one of SL family of languages) 
+//												  .fMap(getProperty.apply(getClass().getName()+".codec")
+//														  			//register the language for this agent after instantiating by reflection 
+//																   .apply(s->Algo.of(s).set(s1->getContentManager().registerLanguage((Codec) Class.forName(s1).getConstructor().newInstance()))
+//																		 				   //also add the language to Service Description
+//																		   				   .onSuccess(s2->sd.addLanguages(s2))))
+//												  //add all properties read from property file to property field of Service Description (this should also include IOPR of the service)
+//												  .onSuccess(p->{
+//													  //BTW, save the property for future use
+//													  this.property = p;
+//													  p.forEach((k,v)->sd.addProperties(new Property((String) k, v)));
+//												  }))
+//								 //add the service to DFAgentDescription
+//								.onSuccess(sd->df.addServices(sd)))
+//				  //register the DFServiceDescription to this agent via DFService
+//				  .set(df->DFService.register(this, df))
+//				  //on failure log the exception message
+//				  .onFailure(e->logger.severe("Error while configuring agent service from agent properties " + "\n" + e.getMessage()))
+//				  //also delete this agent
+//				  .onFailure(e->this.doDelete())
+//				  //on success log a success message and save the property for future use
+//				  .onSuccess(df->{					  
+//					  logger.info("Agent "+ getName()+ "is ready");
+//				  });
 		
 		//add default cyclic behavior listening to incoming messages
 //		addCyclicBehavior(()->{

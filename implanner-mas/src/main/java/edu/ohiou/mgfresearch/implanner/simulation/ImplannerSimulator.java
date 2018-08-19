@@ -54,7 +54,7 @@ public class ImplannerSimulator extends ViewObject{
 			e.printStackTrace();
 		}
 	 	
-		s.setup(this.gettApplet());
+		s.setup(this.geettApplet());
 		
 	 }
 	 

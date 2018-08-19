@@ -1,5 +1,6 @@
 package edu.ohiou.mfgresearch.implanner_mas;
 
+import edu.ohiou.mgfresearch.implanner.simulation.SimulationPanel;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -33,6 +34,6 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+    	
     }
 }

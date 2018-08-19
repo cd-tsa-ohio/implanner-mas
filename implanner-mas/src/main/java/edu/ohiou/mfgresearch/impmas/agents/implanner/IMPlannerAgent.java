@@ -344,7 +344,7 @@ public class IMPlannerAgent extends MfgAgent {
 	        LinkedList result = new LinkedList();
 	        for(ListIterator itr = featList.listIterator();itr.hasNext();){
 	          MfgFeature feature = (MfgFeature)itr.next();
-	          if( !compFeat.contains(feature) && compFeat.containsAll(feature.gettPrevious())){
+	          if( !compFeat.contains(feature) && compFeat.containsAll(feature.geettPrevious())){
 	            result.add(feature);
 	          }
 	        }
@@ -377,7 +377,7 @@ public class IMPlannerAgent extends MfgAgent {
 		        for(int i = 0; i< featureList.size();i++){
 		        	MfgFeature currFeat = ((MfgFeature)featureList.get(i));
 					
-					if(currFeat.gettPrevious().isEmpty() ){
+					if(currFeat.geettPrevious().isEmpty() ){
 						completedFeatures.add(currFeat);
 						Row featureNamerow = sheet.createRow(++rowNumber);
 			            Cell featureNamecell = featureNamerow.createCell(columnNumber);
@@ -1077,7 +1077,7 @@ public class IMPlannerAgent extends MfgAgent {
 			if (o1 instanceof MfgFeature && o2 instanceof MfgFeature) {
 				if(o1.equals(o2))
 					return new Boolean(false);
-				return new Boolean(((MfgFeature) o1).gettNext().contains((MfgFeature) o2));
+				return new Boolean(((MfgFeature) o1).geettNext().contains((MfgFeature) o2));
 			}
 			return new Boolean(false);
 		}
