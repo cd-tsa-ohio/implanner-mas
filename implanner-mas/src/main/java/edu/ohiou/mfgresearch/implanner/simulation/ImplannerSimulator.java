@@ -1,4 +1,4 @@
-package edu.ohiou.mgfresearch.implanner.simulation;
+package edu.ohiou.mfgresearch.implanner.simulation;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.swing.JApplet;
+import javax.swing.JPanel;
 
 import edu.ohiou.mfgresearch.implanner.network.MachineSequenceObject;
 import edu.ohiou.mfgresearch.labimp.basis.ViewObject;
@@ -22,6 +23,7 @@ public class ImplannerSimulator extends ViewObject{
 	}
 	 
 	 public void init(){
+//		 panel = new JPanel();
 	 try {
 		 this.s = new Simulation();
 		 s.machineList = new LinkedList<String[]>();

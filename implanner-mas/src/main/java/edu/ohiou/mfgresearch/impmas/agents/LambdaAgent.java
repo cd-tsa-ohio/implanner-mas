@@ -63,15 +63,15 @@ public abstract class LambdaAgent extends Agent {
 	 * it processes the incoming message by applying the supplied message processor
 	 * then it applies the service providing the extracted concept as input		
 	 */
-	Function<ACLMessage, Func<ACLMessage, ACLMessage>> behavior =
-		om->im->{
-			Uni.of(im)
-//					.fMap(messageProcessor)
-//					.set(i->getContentManager().fillContent(om, (AbsContentElement) service.apply(i)))
-					.onFailure(e->logger.severe("Error while configuring agent service from agent properties " + "\n" + e.getMessage()))
-					.onSuccess(t->logger.info("Agent "+ getName()+ "performed service successfully"));
-			return om;
-	};		
+//	Function<ACLMessage, Func<ACLMessage, ACLMessage>> behavior =
+//		om->im->{
+//			Uni.of(im)
+////					.fMap(messageProcessor)
+////					.set(i->getContentManager().fillContent(om, (AbsContentElement) service.apply(i)))
+//					.onFailure(e->logger.severe("Error while configuring agent service from agent properties " + "\n" + e.getMessage()))
+//					.onSuccess(t->logger.info("Agent "+ getName()+ "performed service successfully"));
+//			return om;
+//	};		
 	
 	@Override
 	protected void setup() {

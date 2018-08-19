@@ -289,6 +289,7 @@ public class IMPlannerAgent extends MfgAgent {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("message for arko because of exception!");
 		}
 	
 	}

@@ -47,19 +47,6 @@ public class ProcessNetworkDealerAgent extends MfgAgent {
 	}
 
 
-	@Override
-	public ServiceDescription[] getServices() {
-		Markets[] ms = (Markets[]) getArguments();
-		this.m = ms[0];
-		ServiceDescription[] services = new ServiceDescription[]{new ServiceDescription(){{
-			setName(m.getText());
-			setType(AgentType.Market.toString());
-			Integer performative = new Integer(ACLMessage.QUERY_REF);
-			addProperties(new Property(performative.toString(), new HaveVendor()));
-		}
-		}};
-		return services;
-	}
 
 	@Override
 	public FSMBehaviour getFSM() {

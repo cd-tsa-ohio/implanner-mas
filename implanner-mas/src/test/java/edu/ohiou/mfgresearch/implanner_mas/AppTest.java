@@ -1,9 +1,5 @@
 package edu.ohiou.mfgresearch.implanner_mas;
 
-import edu.ohiou.mgfresearch.implanner.simulation.SimulationPanel;
-
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 
