@@ -870,10 +870,19 @@ public class IMPlannerAgent extends MfgAgent {
 			fileChooser.setFileFilter(new UGFileFilter());
 			fileChooser.setCurrentDirectory(new File(currentDir));
 			
-			if (fileChooser.showOpenDialog(internalFrame) == JFileChooser.APPROVE_OPTION) {
-				File file = fileChooser.getSelectedFile();
-				mfgPartModel.setStock(new Stock(file));
-				mfgPartModel.generateFeaturePrecedence();
+			if (partFile.getName().endsWith("prt")) {
+				if (fileChooser.showOpenDialog(internalFrame) == JFileChooser.APPROVE_OPTION) {
+					File file = fileChooser.getSelectedFile();
+					mfgPartModel.setStock(new Stock(file));
+					mfgPartModel.generateFeaturePrecedence();
+				}
+				else {
+					System.out.println("No file selected.");
+					return;
+				}				
+			} else {
+				mfgPartModel.setStock(null); // temporary to avoid error for XML file
+			}
 				SquareTableModel precedenceModel;
 				precedenceModel = new SquareTableModel(mfgPartModel.getFeatureList().toArray(), new MfgFeaturePrecedenceGenerator());
 
@@ -944,10 +953,8 @@ public class IMPlannerAgent extends MfgAgent {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				}
-				else{
-					System.out.println("No file selected.");
-				}
+				
+				
 				
 			
 		}
