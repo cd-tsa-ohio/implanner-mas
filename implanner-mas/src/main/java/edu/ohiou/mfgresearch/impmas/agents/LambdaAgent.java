@@ -41,15 +41,15 @@ public abstract class LambdaAgent extends Agent {
 	protected Properties property;
 	
 	//Function to get property values 
-	Function<String, Function<Cons<String>, Func<Properties, Uni<Properties>>>> getProperty =
-			x -> c -> y -> {
-				Uni.of(y.getProperty(x))
-				  .filter(s1->s1.contains(","))
-				  .fMap2Stream(s2->Uni.of(s2.split(",")))
-				  .flatMap(s3->Stream.of(s3.set(c)))
-				  .forEach(s4->s4.onFailure(e->logger.severe("Error while configuring from property key " + x + "/n" + e.getMessage())));;
-				return Uni.of(y);
-			};	
+//	Function<String, Function<Cons<String>, Func<Properties, Uni<Properties>>>> getProperty =
+//			x -> c -> y -> {
+//				Uni.of(y.getProperty(x))
+//				  .filter(s1->s1.contains(","))
+//				  .fMap2Stream(s2->Uni.of(s2.split(",")))
+//				  .flatMap(s3->Stream.of(s3.set(c)))
+//				  .forEach(s4->s4.onFailure(e->logger.severe("Error while configuring from property key " + x + "/n" + e.getMessage())));;
+//				return Uni.of(y);
+//			};	
 			
 	/**
 	 * MEssage Processor to be supplied by concrete agent 	
