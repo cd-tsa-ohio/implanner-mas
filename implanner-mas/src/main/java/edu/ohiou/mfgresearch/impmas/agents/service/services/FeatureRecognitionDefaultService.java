@@ -8,6 +8,9 @@ import jade.lang.acl.ACLMessage;
 import jade.util.Logger;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,7 +38,21 @@ public class FeatureRecognitionDefaultService extends AbstractFreelancerService 
 		//String inString = pf.getPartFile();
 		System.out.println("DNS> string in performService ") ;
 		File file = new File("c:/a.txt") ; // (File) input;
+		
+		if (pf.getName().endsWith("prt")) {
 		output.add(new MfgPartModel().openUGFile(pf.getTempFile()));
+		}
+		else {
+			try {
+				output.add(new MfgPartModel().parseFeatures(new FileReader(pf.getTempFile())));
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		System.out.println("Shuvo: in service Feature Recognition performed");
 		return output;
