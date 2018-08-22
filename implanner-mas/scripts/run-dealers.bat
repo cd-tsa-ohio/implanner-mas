@@ -1,0 +1,1 @@
+run-jade-prompt jade-agent-dealers.properties

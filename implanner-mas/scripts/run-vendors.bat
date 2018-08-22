@@ -1,0 +1,1 @@
+run-jade-prompt jade-agent-vendors.properties

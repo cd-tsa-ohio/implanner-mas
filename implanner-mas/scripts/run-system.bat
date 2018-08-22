@@ -1,0 +1,1 @@
+call run-jade-prompt jade-agent-system.properties
