@@ -40,9 +40,6 @@ public class ProcessSelectionDefaultService extends AbstractFreelancerService{
 	/**
 	 * @param args
 	 */
-	
-	
-
 	@Override
 	public Set<MfgConcept> performService(MfgConcept input) {
 		// TODO Auto-generated method stub
