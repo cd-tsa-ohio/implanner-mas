@@ -50,10 +50,10 @@ public class SystemSimulationDealerAgent extends MfgAgent{
 	@Override
 	public ServiceDescription[] getServices() {
 		// TODO Auto-generated method stub
-				Markets[] ms = (Markets[]) getArguments();
-				this.m = ms[0];
+//				Markets[] ms = (Markets[]) getArguments();
+//				this.m = ms[0];
 				ServiceDescription[] services = new ServiceDescription[]{new ServiceDescription(){{
-					setName(m.getText());
+					setName((String) getArguments()[0]);
 					setType(AgentType.Market.toString());
 					Integer performative = new Integer(ACLMessage.QUERY_REF);
 					addProperties(new Property(performative.toString(), new HaveVendor()));
