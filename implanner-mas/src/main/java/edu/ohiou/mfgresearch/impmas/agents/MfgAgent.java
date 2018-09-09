@@ -140,7 +140,7 @@ public abstract class MfgAgent extends Agent {
 			SimpleFormatter formatter=new SimpleFormatter();
 			fh.setFormatter(formatter);
 			
-			logger.info("my first log");
+//			logger.info("my first log");
 			
 			
 			MfgDF.getInstance().register(this, getServices());
