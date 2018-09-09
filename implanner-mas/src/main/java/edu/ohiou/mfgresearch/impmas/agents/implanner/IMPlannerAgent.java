@@ -894,16 +894,18 @@ public class IMPlannerAgent extends MfgAgent {
 
 				for (ListIterator itr = mfgPartModel.getFeatureList().listIterator();itr.hasNext();) {
 					MfgFeature feat = (MfgFeature) itr.next();
+					buffer.append(feat.makeFactString());
 					
-					if(feat instanceof Hole){
-						buffer.append(((Hole)feat).makeFactString());
-					}
-					if(feat instanceof Slot){
-						buffer.append(((Slot)feat).makeFactString());
-					}
-					if(feat instanceof Pocket){
-						buffer.append(((Pocket)feat).makeFactString());
-					}
+//					if(feat instanceof Hole){
+//						buffer.append(((Hole)feat).makeFactString());
+//					}
+//					if(feat instanceof Slot){
+//						buffer.append(((Slot)feat).makeFactString());
+//					}
+//					if(feat instanceof Pocket){
+//						buffer.append(((Pocket)feat).makeFactString());
+//					}
+				 
 				}
 				System.out.println("facts created /n" + buffer.toString());
 				
