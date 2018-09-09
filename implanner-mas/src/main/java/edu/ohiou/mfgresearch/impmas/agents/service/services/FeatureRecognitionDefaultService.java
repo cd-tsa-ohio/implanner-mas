@@ -17,6 +17,7 @@ import java.util.Set;
 import edu.ohiou.mfgresearch.implanner.MfgConcept;
 import edu.ohiou.mfgresearch.implanner.parts.MfgPartModel;
 import edu.ohiou.mfgresearch.impmas.semantics.PartFile;
+import edu.ohiou.mfgresearch.labimp.draw.DrawWFApplet;
 
 public class FeatureRecognitionDefaultService extends AbstractFreelancerService {
 
@@ -40,7 +41,10 @@ public class FeatureRecognitionDefaultService extends AbstractFreelancerService 
 		File file = new File("c:/a.txt") ; // (File) input;
 		
 		if (pf.getName().endsWith("prt")) {
-		output.add(new MfgPartModel().openUGFile(pf.getTempFile()));
+			MfgPartModel mfgPartModel = new MfgPartModel().openUGFile(pf.getTempFile());
+			DrawWFApplet dfa = new DrawWFApplet(mfgPartModel.getPartModel());
+			mfgPartModel.getPartModel().display("Part Model in FR Agent");
+		output.add(mfgPartModel);
 		}
 		else {
 			try {
