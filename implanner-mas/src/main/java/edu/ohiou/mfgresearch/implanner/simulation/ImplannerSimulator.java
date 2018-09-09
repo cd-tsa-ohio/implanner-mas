@@ -1,6 +1,7 @@
 package edu.ohiou.mfgresearch.implanner.simulation;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -84,9 +85,12 @@ public class ImplannerSimulator extends ViewObject{
 	     machineList.add(obj2);
 	     machineList.add(obj3);
 	     machineList.add(obj4);
+	     
+	     Map<String, LinkedList<MachineSequenceObject>> partMap = new HashMap<String, LinkedList<MachineSequenceObject>>();
+			partMap.put("test", machineList);	
 			
-	   //  ImplannerSimulator myclass = new ImplannerSimulator(machineList);
-		// myclass.display("My Simulation");
+	     ImplannerSimulator myclass = new ImplannerSimulator(partMap);
+		 myclass.display("My Simulation");
 	}
 	
 
