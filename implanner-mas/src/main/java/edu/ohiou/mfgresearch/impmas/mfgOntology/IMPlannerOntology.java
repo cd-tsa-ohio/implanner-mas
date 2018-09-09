@@ -108,6 +108,7 @@ public class IMPlannerOntology extends BeanOntology implements IMPlannerVocabula
 			add(Hole.class);
 			add(Pocket.class);
 			add(Slab.class);
+			add(Chamfer.class);
 			//add(Vector3d.class);
 			//add(CircularFeatureSet.class);
 			add(DovetailSlot.class);
